@@ -1,4 +1,5 @@
 import WelcomePage from "@/pages/WelcomePage"
+import CounterPage from "@/pages/CounterPage"
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <WelcomePage></WelcomePage>
+      <CounterPage></CounterPage>
     </>
   )
 }

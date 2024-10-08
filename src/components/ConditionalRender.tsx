@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types'
-
-ConRend.propTypes = {
-  condition: PropTypes.any,
-  value: PropTypes.any
+interface checkTarget {
+  condition: boolean,
+  value: number
 }
 
-export default function ConRend({ condition, value }) {
+
+export default function ConRend({ condition, value }: checkTarget) {
   if (condition)
     return (
       <div className="mt-4 bg-white shadow-md rounded-lg p-6">

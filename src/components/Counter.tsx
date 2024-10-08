@@ -1,13 +1,11 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 
-Counter.propTypes = {
-  cnt: PropTypes.number.isRequired,
-  cntUp: PropTypes.func.isRequired,
-  liftUp: PropTypes.func.isRequired
+interface counterProps {
+  cnt: number,
+  cntUp: () => void,
+  liftUp: (data: number) => void
 }
-
-export default function Counter({ cnt, cntUp, liftUp }) {
+export default function Counter({ cnt, cntUp, liftUp }: counterProps) {
   const [count, setCount] = useState(0)
   return (
     <div className="flex flex-col items-center text-white p-8">

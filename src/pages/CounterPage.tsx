@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Counter from "../components/Counter"
-import ConRend from "../components/ConditionalRender"
+import Counter from "@/components/Counter"
+import ConRend from "@/components/ConditionalRender"
 
 export default function CounterPage() {
   const [cnt, setCnt] = useState(100)
@@ -10,7 +10,8 @@ export default function CounterPage() {
   function cntUp() {
     setCnt((cnt) => cnt + 1)
   }
-  function liftUp(data) {
+
+  function liftUp(data: number) {
     setLiftedItem(data)
     setLifted(true)
   }
