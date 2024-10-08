@@ -1,6 +1,7 @@
 import reactLogo from '@/assets/react.svg'
 import viteLogo from '@/assets/vite.svg'
 import tailwindLogo from '@/assets/tailwind.svg'
+import tsLogo from '@/assets/tslogo.svg'
 
 export default function Logo() {
 
@@ -15,7 +16,8 @@ export default function Logo() {
   const logoInfo: LogoInfo[] = [
     { src: viteLogo, url: 'https://vitejs.dev', alt: 'Vite logo' },
     { src: reactLogo, url: 'https://vitejs.dev', alt: 'Vite logo' },
-    { src: tailwindLogo, url: 'https://vitejs.dev', alt: 'Vite logo' }
+    { src: tsLogo, url: 'https://www.typescriptlang.org', alt: 'type scripts logo' },
+    { src: tailwindLogo, url: 'https://vitejs.dev', alt: 'Vite logo' },
   ]
 
   function LogoList() {
@@ -46,7 +48,7 @@ export default function Logo() {
       </div>
 
       <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-4">
-        Vite + React + Tailwind
+        Vite + React + TypeScript + Tailwind
       </h1>
       <p className="text-lg text-gray-300 text-center">
         A powerful combination for building fast and scalable web applications.
