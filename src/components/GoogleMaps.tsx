@@ -1,45 +1,46 @@
-import React from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+
+const apiKey = import.meta.env.VITE_MAP_KEY
 
 const containerStyle = {
 	width: '100%',
-	height: '400px'
+	height: '700px'
 };
 
 const center = {
-	lat: 37.5665, // 서울의 위도
-	lng: 126.9780 // 서울의 경도
+	lat: 37.5665,
+	lng: 126.9780
 };
 
-function MyComponent() {
+const MyComponent = () => {
+
 	const { isLoaded } = useJsApiLoader({
 		id: 'google-map-script',
-		googleMapsApiKey: "YOUR_API_KEY" // 여기에 본인의 API 키를 넣으세요
+		googleMapsApiKey: apiKey,
+		libraries: ['marker'],
+		version: 'weekly',
 	})
 
-	const [map, setMap] = React.useState(null)
-
-	const onLoad = React.useCallback(function callback(map) {
+	const onLoad = (map: google.maps.Map) => {
 		const bounds = new window.google.maps.LatLngBounds(center);
 		map.fitBounds(bounds);
-		setMap(map)
-	}, [])
+		new window.google.maps.marker.AdvancedMarkerElement({
+			position: center,
+			map: map,
+		});
+	};
 
-	const onUnmount = React.useCallback(function callback(map) {
-		setMap(null)
-	}, [])
+	if (!isLoaded) return <div>Loading...</div>;
 
-	return isLoaded ? (
+	return (
 		<GoogleMap
 			mapContainerStyle={containerStyle}
 			center={center}
 			zoom={10}
 			onLoad={onLoad}
-			onUnmount={onUnmount}
 		>
-			<Marker position={center} />
 		</GoogleMap>
-	) : <></>
+	);
 }
 
-export default React.memo(MyComponent)
+export default MyComponent;
