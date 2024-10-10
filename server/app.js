@@ -39,6 +39,28 @@ app.post('/api/todo', (req, res) => {
     return res.send('success')
 })
 
+app.put('/api/todo/:id', (req, res) => {
+    console.log('updating ! ')
+    const todoId = parseInt(req.params.id);
+    const { text, done } = req.body;
+
+    const todoIndex = todoList.findIndex(todo => todo.id === todoId);
+
+    if (todoIndex === -1) {
+        return res.status(404).send('Todo not found');
+    }
+
+    todoList[todoIndex] = {
+        ...todoList[todoIndex],
+        text: text || todoList[todoIndex].text,
+        done: done !== undefined ? done : todoList[todoIndex].done
+    };
+
+    return res.send('Todo updated successfully');
+})
+
+
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
