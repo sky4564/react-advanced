@@ -4,27 +4,12 @@
 
 @layer base {
   :root {
-    --color-text: 255 255 255;
-    --color-background: 36 36 36;
-
     line-height: 1.5;
-    font-weight: 400;
+
     color-scheme: light dark;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  html {
-    @apply font-sans;
-    /* 텍스트 색상 - 더 진한 색상 사용 */
-    @apply text-[color:rgba(var(--color-text),1)];
-    /* 배경색 - 더 밝은 색상 사용 */
-    @apply bg-[color:rgb(var(--color-background))];
-    /* 글자 두께를 약간 증가 */
-    @apply font-medium;
-    /* 줄 간격을 약간 늘림 */
-    @apply leading-relaxed;
   }
 }
