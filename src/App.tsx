@@ -2,7 +2,7 @@
 // import CounterPage from "@/pages/CounterPage"
 // import HttpsGet from "@/components/HttpsGet"
 
-import GoogleMaps from "./components/GoogleMaps"
+import GoogleMapComponent from "./components/GoogleMaps"
 function App() {
 
 
@@ -11,7 +11,7 @@ function App() {
       {/* <WelcomePage></WelcomePage> */}
       {/* <CounterPage></CounterPage> */}
       {/* <HttpsGet></HttpsGet> */}
-      <GoogleMaps></GoogleMaps>
+      <GoogleMapComponent></GoogleMapComponent>
     </>
   )
 }
